@@ -52,12 +52,14 @@ const Select = ({ multiple, options, onChange, value }: SelectProps) => {
   };
 
   useEffect(() => {
-    setHighlightedIndex(0);
+    if (isOpen) {
+      setHighlightedIndex(0);
+    }
   }, [isOpen]);
   return (
     <div
       onClick={() => setIsOpen((prev) => !prev)}
-      onBlur={() => setIsOpen((prev) => !prev)}
+      onBlur={() => setIsOpen(false)}
       tabIndex={0}
       className={styles.container}
     >
@@ -95,6 +97,7 @@ const Select = ({ multiple, options, onChange, value }: SelectProps) => {
             onClick={(e) => {
               e.stopPropagation();
               selectOption(option);
+              setIsOpen(false);
             }}
             onMouseEnter={() => setHighlightedIndex(index)}
             key={option.value}
