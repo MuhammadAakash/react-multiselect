@@ -74,23 +74,23 @@
     cursor: pointer;
 }
 .option.selected {
-    background-color: hsl(200, 100%, 70%);
+    background-color: hsl(200, 59%, 70%);
+    margin-top: 2px;
 }
 
 .option.highlighted {
-    background-color: hsl(200, 100%, 50%);
-    color: white;
+    background-color: #f6f6f6;
 }
 
 .option-badge {
     display: flex;
     align-items: center;
-    padding: .15em .25em;
-    border: .05em solid #777;
-    border-radius: .25em;
-    gap: .25em;
+    /* padding: .15em .25em; */
+    border: 2px solid #f1f1f1ff;
+    border-radius: 16px;
+    gap: 10px;
     cursor: pointer;
-    background: none;
+    background: #f1f1f1ff;
     outline: none;
 }
 
