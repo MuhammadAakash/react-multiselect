@@ -16,6 +16,10 @@ const options = [
   },
   { label: "Fourth", value: 4 },
   { label: "Five", value: 5 },
+  {
+    label: "🐶 Dog",
+    value: "dog",
+  },
 ];
 
 function App() {

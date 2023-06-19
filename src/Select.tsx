@@ -15,7 +15,7 @@ type SingleSelectProps = {
 
 export type SelectOption = {
   label: string;
-  value: number;
+  value: number | string;
 };
 
 type SelectProps = {
