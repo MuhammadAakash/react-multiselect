@@ -35,6 +35,10 @@ function App() {
         onChange={(opt) => {
           setValue1(opt);
         }}
+        backgroundColor="#ECF5FD"
+        borderColor="#67AAE4"
+        tagBackgroundColor="#F4DAD7"
+        closeTagColor="#67AAE4"
       />
       <br />
 

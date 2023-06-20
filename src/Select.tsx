@@ -20,9 +20,22 @@ export type SelectOption = {
 
 type SelectProps = {
   options: SelectOption[];
+  backgroundColor?: string;
+  borderColor?: string;
+  tagBackgroundColor?: string;
+  closeTagColor?: string;
 } & (SingleSelectProps | MultipleSelectProps);
 
-const Select = ({ multiple, options, onChange, value }: SelectProps) => {
+const Select = ({
+  multiple,
+  options,
+  onChange,
+  value,
+  backgroundColor = "#ffffff",
+  borderColor = "#777",
+  tagBackgroundColor = "#f1f1f1ff",
+  closeTagColor = "#777",
+}: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState<number>(0);
 
@@ -62,6 +75,10 @@ const Select = ({ multiple, options, onChange, value }: SelectProps) => {
       onBlur={() => setIsOpen(false)}
       tabIndex={0}
       className={styles.container}
+      style={{
+        backgroundColor: backgroundColor,
+        borderColor: borderColor,
+      }}
     >
       <span className={styles.value}>
         {multiple
@@ -73,9 +90,20 @@ const Select = ({ multiple, options, onChange, value }: SelectProps) => {
                   selectOption(v);
                 }}
                 className={styles["option-badge"]}
+                style={{
+                  backgroundColor: tagBackgroundColor,
+                }}
               >
                 {v.label}
-                <span className={styles["remove-btn"]}> &times;</span>
+                <span
+                  className={styles["remove-btn"]}
+                  style={{
+                    color: closeTagColor,
+                  }}
+                >
+                  {" "}
+                  &times;
+                </span>
               </button>
             ))
           : value?.label}
